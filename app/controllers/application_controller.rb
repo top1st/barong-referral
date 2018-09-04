@@ -3,6 +3,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  before_action :capture_referal
+  private
+  def capture_referal
+    session[:referral] = params[:referral] if params[:referral]
+  end
+
   alias current_user current_account # CanCanCan expects current_user.
 
   rescue_from Vault::TOTP::Error, with: :vault_human_exception

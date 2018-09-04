@@ -1,6 +1,8 @@
 class RegistrationsController < Devise::RegistrationsController
-  before_action :configure_permitted_parameters, :only => [:create]
 
+  before_action :configure_permitted_parameters
+
+  # POST /resource
   def create
     build_resource(sign_up_params)
 
@@ -21,12 +23,12 @@ class RegistrationsController < Devise::RegistrationsController
       set_minimum_password_length
       respond_with resource
     end
-
   end
 
   protected
+
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys:[:referral_code, :email, :password, :password_confirmation])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:referral_code])
   end
 
 end

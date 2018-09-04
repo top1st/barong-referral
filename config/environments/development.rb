@@ -48,7 +48,7 @@ Rails.application.configure do
       enable_starttls_auto: true
   }
 
-  config.action_mailer.default_url_options = { host: 'https://account.monedix.io', port: 80 }
+  config.action_mailer.default_url_options = { host: 'https://account.monedix.io', port: 443 }
 
 
 
