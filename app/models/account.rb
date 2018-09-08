@@ -96,6 +96,7 @@ class Account < ApplicationRecord
       confirmation_sent_at: format_iso8601_time(confirmation_sent_at),
       reset_password_sent_at: format_iso8601_time(reset_password_sent_at),
       state: state,
+      referral_code: referral_code,
       failed_attempts: failed_attempts,
       locked_at: locked_at,
       created_at: format_iso8601_time(created_at),

@@ -11,7 +11,7 @@ module UserApi
                { code: 401, message: 'Invalid bearer token' }
              ]
         get '/me' do
-          current_account.as_json(only: %i[uid email level role state otp_enabled])
+          current_account.as_json(only: %i[uid email level role state otp_enabled referral_code])
         end
 
         desc 'Change account password',
